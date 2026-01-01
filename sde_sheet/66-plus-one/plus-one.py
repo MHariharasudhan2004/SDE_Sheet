@@ -7,9 +7,6 @@ class Solution:
         num=int(num)
         num+=1
         num=list(str(num))
-        res=[]
-        for i in range(len(num)):
-            res.append(int(num[i]))
-        return res
+        return list(map(int,num))
 
         
