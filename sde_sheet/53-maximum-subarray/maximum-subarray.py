@@ -1,12 +1,9 @@
-import sys
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        sum=0
-        maxi=-sys.maxsize-1
+        curr_sum=0
+        max_sum=nums[0]
         for i in range(len(nums)):
-            sum+=nums[i]
-            if sum>maxi:
-                maxi=sum
-            if sum<0:
-                sum=0
-        return maxi
+            curr_sum=max(curr_sum+nums[i],nums[i])
+            max_sum=max(max_sum,curr_sum)
+        return max_sum
+        
